@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bioremax Innovation Pvt Ltd</title>
+   <link rel="icon" type="image/x-icon" href="img/bipllogo.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+    .top-bar {
+      font-size: 15px;
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .top-bar i {
+      color: #ffc107;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* ✅ Hover effects */
+    .top-bar a:hover {
+      color: #ffc107;
+    }
+
+    .top-bar a:hover i {
+      transform: scale(1.2);
+      color: #fff;
+    }
+
+    /* ✅ Mobile layout fix */
+    @media (max-width: 768px) {
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+
+    .navbar {
+      background-color: #fff !important;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      padding: 0.6rem 1rem;
+      transition: all 0.3s ease-in-out;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-brand span {
+      color: #198754; /* Bootstrap success green */
+      font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+      font-weight: 500;
+      margin: 0 8px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== Hover underline animation ===== */
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: #198754;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #198754;
+    }
+
+    /* ===== Dropdown Style ===== */
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #198754;
+      color: #fff;
+    }
+
+    /* ===== Contact Button ===== */
+    .contact {
+      background-color: #ffc107 !important;
+      color: #000 !important;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .contact:hover {
+      background-color: #ffca2c !important;
+      transform: scale(1.05);
+      color: #000 !important;
+    }
+
+    /* ===== Contact in Corner ===== */
+    .contact-btn-container {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* ===== Logo Styling ===== */
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Mobile view ===== */
+    @media (max-width: 991px) {
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 8px 0;
+      }
+
+      .navbar-brand span {
+        font-size: 1rem;
+      }
+    }
+
+    /* Overlay with gradient fade */
+  .hero-overlay {
+    
+    z-index: 1;
+  }
+
+  /* Text animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-join h1, .hero-join p, .hero-join a {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+  }
+  .hero-join h1 { animation-delay: 0.1s; }
+  .hero-join p { animation-delay: 0.3s; }
+  .hero-join a { animation-delay: 0.5s; }
+
+  /* Button hover */
+  .btn-warning {
+    transition: all 0.3s ease;
+  }
+  .btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-join {
+      height: 80vh;
+      padding: 0 1rem;
+    }
+    .hero-join h1 {
+      font-size: 2rem;
+    }
+    .hero-join p {
+      font-size: 1rem;
+    }
+    .hero-bottom-bar p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .form-control {
+    transition: all 0.3s ease;
+  }
+  .form-control:focus {
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    border-color: #ffc107;
+  }
+  .btn-warning:hover {
+    background-color: #ffb300;
+    transform: scale(1.05);
+  }
+  @media (max-width: 992px) {
+    .col-lg-6 {
+      text-align: center;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Top Bar -->
+  <div class="top-bar bg-dark text-light py-2 px-3">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+
+        <!-- Left Side: Contact Info -->
+        <div class="col-md-6 col-12 contact-info text-center text-md-start mb-2 mb-md-0">
+          <i class="fa fa-phone me-2"></i>
+          <a href="tel:+919311535770">+91 9311535770</a>
+          <span class="mx-2">|</span>
+          <i class="fa fa-envelope me-2"></i>
+          <a href="mailto:bipl.enquiry@gmail.com">bipl.enquiry@gmail.com</a>
+        </div>
+
+        <!-- Right Side: Social Icons -->
+        <div class="col-md-6 col-12 text-center text-md-end">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container d-flex justify-content-between align-items-center bg-white">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/bipllogo.png" alt="Logo" style="height: 75px; filter: saturate(1.2) contrast(1.1);" class="me-2">
+          <span class="fw-bold d-none d-lg-inline">Bioremax Innovation Pvt Ltd</span>
+        </a>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Center Navigation -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu rounded-0">
+                <li><a class="dropdown-item " href="about.html">About us</a></li>
+                <li><a class="dropdown-item" href="#">Board members</a></li>
+                <li><a class="dropdown-item" href="#">Awards</a></li>
+                <li><a class="dropdown-item" href="#">Clients</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="Services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="Project.html">Project</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Impact studies</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold text-success" href="career.html">Career</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold bg-warning contact shadow p-2 px-3" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<section class="hero-join position-relative text-center text-white d-flex flex-column justify-content-center align-items-center w-100" 
+  style="height: 100vh; background: url('img/join\ mission.png') center/cover no-repeat; overflow: hidden;">
+
+  <!-- Gradient Overlay -->
+  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+  <!-- Content -->
+  <div class="container position-relative z-2 text-center px-3">
+    <h1 class="fw-bold display-3 mb-3 animate__animated animate__fadeInDown">
+      Join <span class="text-warning">Our Mission</span>
+    </h1>
+    <p class="lead fw-semibold text-light mb-4 animate__animated animate__fadeInUp" 
+       style="max-width: 750px; margin: 0 auto; font-size: 1.25rem;">
+      Be part of Bioremax Innovation — where science, sustainability, and innovation
+      unite to create a cleaner future.
+    </p>
+    <a href="career.html" 
+       class="btn btn-warning rounded-pill px-5 py-3 fw-bold text-uppercase shadow animate__animated animate__fadeInUp" 
+       style="animation-delay: 0.4s; letter-spacing: 2px;">
+      Explore Opportunities
+    </a>
+  </div>
+
+  <!-- Bottom Brand Bar -->
+  <div class="hero-bottom-bar position-absolute bottom-0 w-100 text-dark py-3 bg-warning shadow-sm">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+      <p class="mb-0 fw-bold fs-5">🌿 Empowering Innovation. Enriching Futures.</p>
+      <p class="mb-0 fw-semibold">Bioremax Innovation Pvt. Ltd</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 w-100" style="background: linear-gradient(to bottom, #f8f9fa, #ffffff);">
+  <div class="container">
+    <div class="row g-4 align-items-stretch flex-column-reverse flex-lg-row">
+
+      <!-- Left Section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="p-4 p-md-5 bg-white shadow-lg rounded-4 h-70 border-top border-4 border-warning position-relative overflow-hidden">
+          <div class="position-absolute top-0 end-0 opacity-25 d-none d-md-block">
+            <i class="fa fa-users fa-6x text-warning"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-4 border-start border-3 border-warning ps-3">
+            Join Our Team
+          </h3>
+          <p class="lead text-muted mb-4">
+            At <span class="fw-semibold text-dark">KIC</span>, we focus on 
+            <strong>excellence, quality,</strong> and providing the Oil and Gas industry with the best talent. 
+            We expect unwavering <strong>commitment, integrity, teamwork,</strong> and an entrepreneurial spirit from our teams. 
+            If you believe you have what it takes to join a fast-growing organization, please update your profile and apply through the links below.
+          </p>
+          <div class="border-start border-4 border-success ps-3">
+            <h6 class="fw-bold mb-0 text-success">No available vacancies at the moment.</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section (Form) -->
+      <div class="col-lg-6 col-md-12">
+        <div class="p-4 p-md-5 bg-white shadow-lg rounded-4 h-100 border-top border-4 border-warning">
+          <h4 class="fw-bold mb-4 text-center text-dark text-uppercase" style="letter-spacing: 1px;">
+            Please Upload Your CV
+          </h4>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" id="name" class="form-control form-control-lg rounded-3 border border-light shadow-sm" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" id="email" class="form-control form-control-lg rounded-3 border border-light shadow-sm" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" id="mobile" class="form-control form-control-lg rounded-3 border border-light shadow-sm" placeholder="Mobile No." required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" id="jobTitle" class="form-control form-control-lg rounded-3 border border-light shadow-sm" placeholder="Job Title">
+              </div>
+              <div class="col-12">
+                <textarea id="message" class="form-control form-control-lg rounded-3 border border-light shadow-sm" rows="4" placeholder="Subject"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label small text-muted mb-1">Your CV (pdf | doc | docx)</label>
+                <input type="file" class="form-control rounded-3 border border-light shadow-sm" accept=".pdf,.doc,.docx">
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-warning px-5 py-3 fw-bold text-dark rounded-pill shadow border-0" style="transition: all 0.3s ease;">
+                  SEND APPLICATION
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Extra Responsive Tweaks -->
+<style>
+  @media (max-width: 992px) {
+    section .fa-users {
+      font-size: 4rem !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section .p-md-5 {
+      padding: 1.5rem !important;
+    }
+    section h3, section h4 {
+      text-align: center;
+    }
+    section p {
+      font-size: 1rem !important;
+    }
+    section .btn {
+      width: 100%;
+    }
+  }
+</style>
+
+
+
+
+
+<footer class="bg-dark text-white pt-5 position-relative">
+  <div class="container">
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-4">
+        <h6 class="text-warning fs-6 mb-3 d-flex align-items-center">
+          <img src="img/bipllogo.png" alt="BIPL Logo" height="45" class="me-2">
+          Bioremax Innovation Pvt Ltd
+        </h6>
+        <p class="text-white-50">
+          BIPL, a technology startup, engages in developing and commercializing innovations as well as providing knowledge-based services.
+        </p>
+        <div class="d-flex mt-3">
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="text-warning fs-6 mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-white-50">
+          <li class="mb-2"><a href="index.html" class="text-light hover-link">Home</a></li>
+          <li class="mb-2"><a href="about.html" class="text-light hover-link">About Us</a></li>
+          <li class="mb-2"><a href="services.html" class="text-light hover-link">Services</a></li>
+          <li class="mb-2"><a href="career.html" class="text-light hover-link">Career</a></li>
+          <li class="mb-2"><a href="contact.html" class="text-light hover-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Map + Contact Info -->
+      <div class="col-md-6">
+        <h6 class="text-warning fs-6 mb-3">FIND US HERE</h6>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.0193384900884!2d47.99436431501123!3d29.375859282120284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf849f29a40c0f%3A0xdee1639a2d00c6b7!2sAl-Hamra%20Tower!5e0!3m2!1sen!2skw!4v1710000000000" 
+                width="100%" height="180" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="mt-3">
+          <p class="text-white-50 mb-1"><i class="fas fa-building me-2"></i>48, 4S, New Loha Mandi Road, Macheda Neendar, Jaipur 302013, Rajasthan (INDIA)</p>
+          <p class="text-white-50 mb-1"><a href="tel:+919311535770" class="text-light hover-link"><i class="fas fa-phone me-2"></i> +91 9311535770</a></p>
+          <p class="text-white-50 mb-1"><a href="mailto:bipl.enquiry@gmail.com" class="text-light hover-link"><i class="fas fa-envelope me-2"></i> bipl.enquiry@gmail.com</a></p>
+          <p class="text-white-50"><a href="https://www.bipl.info/" target="_blank" class="text-light hover-link"><i class="fa-solid fa-globe me-2"></i> www.bipl.info</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-4 border-warning opacity-50">
+
+    <!-- Copyright -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 py-3">
+      <p class="mb-2 mb-md-0">&copy; 2019 Bioremax Innovation Pvt Ltd (BIPL) | ALL RIGHTS RESERVED</p>
+      <p class="mb-0">Designed by <a href="#" class="text-warning hover-link">Roy Informatics Pvt. Ltd.</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- CSS -->
+<style>
+/* Social icons hover effect */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 193, 7, 0.2);
+  transition: all 0.3s;
+}
+.social-icon:hover {
+  background: linear-gradient(135deg, #ff6a00, #ffc107);
+  color: #fff !important;
+  transform: scale(1.2);
+}
+
+/* Hover links */
+.hover-link:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+/* Footer styling */
+footer {
+  font-family: 'Poppins', sans-serif;
+}
+</style>
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  // Replace this with your WhatsApp number (include country code, e.g. 91 for India)
+  const phoneNumber = "919311535770";
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const mobile = document.getElementById("mobile").value;
+  const jobTitle = document.getElementById("jobTitle").value;
+  const message = document.getElementById("message").value;
+
+  const text = `*New Job Application Received*%0A%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Mobile:* ${mobile}%0A💼 *Job Title:* ${jobTitle}%0A📝 *Message:* ${message}%0A%0A📎 *Note:* CV uploaded separately in the form.`;
+
+  const url = `https://wa.me/${phoneNumber}?text=${text}`;
+  window.open(url, "_blank");
+}
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

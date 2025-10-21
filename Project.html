@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bioremax Innovation Pvt Ltd</title>
+   <link rel="icon" type="image/x-icon" href="img/bipllogo.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+    .top-bar {
+      font-size: 15px;
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .top-bar i {
+      color: #ffc107;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* ✅ Hover effects */
+    .top-bar a:hover {
+      color: #ffc107;
+    }
+
+    .top-bar a:hover i {
+      transform: scale(1.2);
+      color: #fff;
+    }
+
+    /* ✅ Mobile layout fix */
+    @media (max-width: 768px) {
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+
+    .navbar {
+      background-color: #fff !important;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      padding: 0.6rem 1rem;
+      transition: all 0.3s ease-in-out;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-brand span {
+      color: #198754; /* Bootstrap success green */
+      font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+      font-weight: 500;
+      margin: 0 8px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== Hover underline animation ===== */
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: #198754;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #198754;
+    }
+
+    /* ===== Dropdown Style ===== */
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #198754;
+      color: #fff;
+    }
+
+    /* ===== Contact Button ===== */
+    .contact {
+      background-color: #ffc107 !important;
+      color: #000 !important;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .contact:hover {
+      background-color: #ffca2c !important;
+      transform: scale(1.05);
+      color: #000 !important;
+    }
+
+    /* ===== Contact in Corner ===== */
+    .contact-btn-container {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* ===== Logo Styling ===== */
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== Mobile view ===== */
+    @media (max-width: 991px) {
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 8px 0;
+      }
+
+      .navbar-brand span {
+        font-size: 1rem;
+      }
+    }
+
+    .project-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+}
+
+/* Equal height images */
+.project-card img {
+  height: 250px; /* 👈 Adjust as needed (200–300px works best) */
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* Overlay hover effect */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Top Bar -->
+  <div class="top-bar bg-dark text-light py-2 px-3">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+
+        <!-- Left Side: Contact Info -->
+        <div class="col-md-6 col-12 contact-info text-center text-md-start mb-2 mb-md-0">
+          <i class="fa fa-phone me-2"></i>
+          <a href="tel:+919311535770">+91 9311535770</a>
+          <span class="mx-2">|</span>
+          <i class="fa fa-envelope me-2"></i>
+          <a href="mailto:bipl.enquiry@gmail.com">bipl.enquiry@gmail.com</a>
+        </div>
+
+        <!-- Right Side: Social Icons -->
+        <div class="col-md-6 col-12 text-center text-md-end">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container d-flex justify-content-between align-items-center bg-white">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/bipllogo.png" alt="Logo" style="height: 75px; filter: saturate(1.2) contrast(1.1);" class="me-2">
+          <span class="fw-bold d-none d-lg-inline">Bioremax Innovation Pvt Ltd</span>
+        </a>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Center Navigation -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu rounded-0">
+                <li><a class="dropdown-item " href="about.html">About us</a></li>
+                <li><a class="dropdown-item" href="#">Board members</a></li>
+                <li><a class="dropdown-item" href="#">Awards</a></li>
+                <li><a class="dropdown-item" href="#">Clients</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="Services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold text-success" href="Project.html">Project</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Impact studies</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="career.html">Career</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold bg-warning contact shadow p-2 px-3" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        <section class="hero position-relative text-center text-white d-flex flex-column justify-content-center align-items-center w-100" 
+  style="height: 100vh; background: url('img/Projects.avif') center/cover no-repeat; overflow: hidden;">
+
+  <!-- Gradient Overlay -->
+  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+  <!-- Content -->
+  <div class="container position-relative z-2 text-center px-3">
+    <h1 class="fw-bold display-3 animate__animated animate__fadeInDown mb-3" style="letter-spacing: 1px;">
+      Bioremax Innovation Pvt. Ltd
+    </h1>
+    <p class="lead fw-semibold text-light mb-4 animate__animated animate__fadeInUp" style="max-width: 700px; margin: 0 auto; font-size: 1.25rem;">
+      Delivering innovative biotech solutions that empower industries and protect the environment.
+    </p>
+    
+  </div>
+
+  <!-- Stylish Bottom Bar -->
+  <div class="hero-bottom-bar position-absolute bottom-0 w-100 text-dark py-3 bg-warning">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+      <p class="mb-0 fw-bold fs-5">🌿 Empowering Environmental Innovation</p>
+      <p class="mb-0 fw-semibold">Bioremax Innovation Pvt. Ltd(BIPL)</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Grid Section -->
+<section class="py-5 bg-light w-100">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark display-5 animate__animated animate__fadeInDown">
+        Our <span class="text-warning">Key Projects</span>
+      </h2>
+      <div class="underline mx-auto mt-3" 
+           style="width: 100px; height: 4px; background-color: #f5b400; border-radius: 2px;"></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Project 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/oil.avif" 
+                 class="card-img-top" alt="Oil Sludge Treatment">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Oil Sludge Bioremediation</h5>
+            <p class="text-muted">
+              A 100% eco-friendly enzymatic solution for breaking down oil sludge into non-toxic byproducts, restoring contaminated land efficiently.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/water restoration.webp" 
+                 class="card-img-top" alt="Water Restoration">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Industrial Water Restoration</h5>
+            <p class="text-muted">
+              Biotechnological treatment process that converts contaminated water into reusable clean water, reducing industrial waste impact.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/soil regeneration.jpg" 
+                 class="card-img-top" alt="Soil Regeneration">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Soil Regeneration Initiative</h5>
+            <p class="text-muted">
+              Our proprietary enzyme blend rejuvenates soil by breaking down hydrocarbons and improving its fertility for agricultural reuse.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
+                 class="card-img-top" alt="Microbial Research">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Microbial Enzyme Discovery</h5>
+            <p class="text-muted">
+              Exploring natural microbes to identify powerful enzyme strains capable of degrading oil and hydrocarbon pollutants efficiently.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Project 5 -->
+      <!-- <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c79d4fbc5d9?auto=format&fit=crop&w=800&q=80" 
+                 class="card-img-top" alt="Waste Management">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Eco Waste Biotransformation</h5>
+            <p class="text-muted">
+              Converting industrial organic waste into reusable bio-materials using natural enzymatic action to minimize landfill impact.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Project 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/bio clean eng.webp" 
+                 class="card-img-top" alt="Clean Energy">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Bio-Clean Energy Generation</h5>
+            <p class="text-muted">
+              Harnessing microbial processes to convert organic residues into bioenergy, reducing carbon emissions and promoting green energy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/site.jpg" 
+                 class="card-img-top" alt="Industrial Site Cleanup">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Industrial Site Cleanup</h5>
+            <p class="text-muted">
+              Enzymatic decontamination of industrial sites, removing hazardous compounds and restoring natural soil health sustainably.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="img/bio-fer.jpg" 
+                 class="card-img-top" alt="Bio Fertilizer Project">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Bio-Fertilizer Production</h5>
+            <p class="text-muted">
+              Developing nutrient-rich organic fertilizers through enzyme fermentation, enhancing soil fertility without chemical use.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100 project-card">
+          <div class="position-relative overflow-hidden rounded-top">
+            <img src="https://images.unsplash.com/photo-1583912268183-d497a6e9b41e?auto=format&fit=crop&w=800&q=80" 
+                 class="card-img-top" alt="Sustainable Packaging">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <span class="text-white fw-bold fs-5">View Details</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold text-dark">Sustainable Packaging Solutions</h5>
+            <p class="text-muted">
+              Creating biodegradable packaging materials using plant-based enzymes to replace plastics in industrial applications.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- Highlight Section -->
+<section class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);">
+  <div class="container text-center position-relative z-2">
+    <h3 class="fw-bold text-dark mb-3 animate__animated animate__fadeInDown">
+      🌍 Building a Cleaner Tomorrow
+    </h3>
+    <p class="text-muted fs-5 mx-auto animate__animated animate__fadeInUp" style="max-width: 850px; line-height: 1.8;">
+      Each project at <span class="text-dark fw-semibold">Bioremax Innovation Pvt Ltd</span> represents our mission — 
+      transforming industrial waste into opportunities for a sustainable, greener future.  
+      Our science-driven approach ensures measurable results and long-term environmental restoration.
+    </p>
+    <a href="contact.html" class="btn btn-warning px-5 py-3 fw-bold text-dark rounded-pill shadow-lg mt-4 animate__animated animate__fadeInUp">
+      Connect With Us
+    </a>
+  </div>
+
+  <!-- Decorative shapes -->
+  <div class="position-absolute top-0 start-0 w-25 h-25 bg-warning opacity-10 rounded-circle" style="filter: blur(80px);"></div>
+  <div class="position-absolute bottom-0 end-0 w-25 h-25 bg-success opacity-10 rounded-circle" style="filter: blur(100px);"></div>
+</section>
+
+<footer class="bg-dark text-white pt-5 position-relative">
+  <div class="container">
+    <div class="row g-4">
+      <!-- About -->
+      <div class="col-md-4">
+        <h6 class="text-warning fs-6 mb-3 d-flex align-items-center">
+          <img src="img/bipllogo.png" alt="BIPL Logo" height="45" class="me-2">
+          Bioremax Innovation Pvt Ltd
+        </h6>
+        <p class="text-white-50">
+          BIPL, a technology startup, engages in developing and commercializing innovations as well as providing knowledge-based services.
+        </p>
+        <div class="d-flex mt-3">
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3 social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h6 class="text-warning fs-6 mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-white-50">
+          <li class="mb-2"><a href="index.html" class="text-light hover-link">Home</a></li>
+          <li class="mb-2"><a href="about.html" class="text-light hover-link">About Us</a></li>
+          <li class="mb-2"><a href="services.html" class="text-light hover-link">Services</a></li>
+          <li class="mb-2"><a href="career.html" class="text-light hover-link">Career</a></li>
+          <li class="mb-2"><a href="contact.html" class="text-light hover-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Map + Contact Info -->
+      <div class="col-md-6">
+        <h6 class="text-warning fs-6 mb-3">FIND US HERE</h6>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.0193384900884!2d47.99436431501123!3d29.375859282120284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf849f29a40c0f%3A0xdee1639a2d00c6b7!2sAl-Hamra%20Tower!5e0!3m2!1sen!2skw!4v1710000000000" 
+                width="100%" height="180" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="mt-3">
+          <p class="text-white-50 mb-1"><i class="fas fa-building me-2"></i>48, 4S, New Loha Mandi Road, Macheda Neendar, Jaipur 302013, Rajasthan (INDIA)</p>
+          <p class="text-white-50 mb-1"><a href="tel:+919311535770" class="text-light hover-link"><i class="fas fa-phone me-2"></i> +91 9311535770</a></p>
+          <p class="text-white-50 mb-1"><a href="mailto:bipl.enquiry@gmail.com" class="text-light hover-link"><i class="fas fa-envelope me-2"></i> bipl.enquiry@gmail.com</a></p>
+          <p class="text-white-50"><a href="https://www.bipl.info/" target="_blank" class="text-light hover-link"><i class="fa-solid fa-globe me-2"></i> www.bipl.info</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-4 border-warning opacity-50">
+
+    <!-- Copyright -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 py-3">
+      <p class="mb-2 mb-md-0">&copy; 2019 Bioremax Innovation Pvt Ltd (BIPL) | ALL RIGHTS RESERVED</p>
+      <p class="mb-0">Designed by <a href="#" class="text-warning hover-link">Roy Informatics Pvt. Ltd.</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- CSS -->
+<style>
+/* Social icons hover effect */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 193, 7, 0.2);
+  transition: all 0.3s;
+}
+.social-icon:hover {
+  background: linear-gradient(135deg, #ff6a00, #ffc107);
+  color: #fff !important;
+  transform: scale(1.2);
+}
+
+/* Hover links */
+.hover-link:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+/* Footer styling */
+footer {
+  font-family: 'Poppins', sans-serif;
+}
+</style>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
